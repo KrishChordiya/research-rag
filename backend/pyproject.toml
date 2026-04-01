@@ -1,0 +1,19 @@
+[project]
+name = "backend"
+version = "0.1.0"
+requires-python = ">=3.13"
+dependencies = [
+    "asyncpg>=0.31.0",
+    "docling>=2.82.0",
+    "fastapi>=0.135.2",
+    "flashrank>=0.2.10",
+    "httpx>=0.28.1",
+    "pgvector>=0.4.2",
+    "pydantic-settings>=2.13.1",
+    "python-multipart>=0.0.22",
+    "sqlalchemy>=2.0.48",
+    "uvicorn>=0.42.0",
+]
+
+[tool.basedpyright]
+typeCheckingMode = "standard"

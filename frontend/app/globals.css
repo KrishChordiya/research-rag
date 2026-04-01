@@ -1,0 +1,177 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --black: #000000;
+  --white: #ffffff;
+  --border: #e5e5e5;
+  --secondary: #666666;
+  --surface: #e5e5e5;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  background-color: var(--white);
+  color: var(--black);
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica,
+    Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Scrollbar styling — minimal */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--secondary);
+}
+
+/* Markdown prose reset */
+.prose-rag h1,
+.prose-rag h2,
+.prose-rag h3,
+.prose-rag h4,
+.prose-rag h5,
+.prose-rag h6 {
+  font-weight: 600;
+  line-height: 1.3;
+  margin-top: 1.25em;
+  margin-bottom: 0.5em;
+}
+.prose-rag h1 { font-size: 1.35em; }
+.prose-rag h2 { font-size: 1.2em; }
+.prose-rag h3 { font-size: 1.05em; }
+
+.prose-rag p {
+  margin-bottom: 0.75em;
+}
+.prose-rag p:last-child {
+  margin-bottom: 0;
+}
+
+.prose-rag ul,
+.prose-rag ol {
+  padding-left: 1.4em;
+  margin-bottom: 0.75em;
+}
+.prose-rag ul {
+  list-style-type: disc;
+}
+.prose-rag ol {
+  list-style-type: decimal;
+}
+.prose-rag li {
+  margin-bottom: 0.25em;
+}
+
+.prose-rag strong {
+  font-weight: 600;
+}
+.prose-rag em {
+  font-style: italic;
+}
+
+.prose-rag a {
+  color: var(--black);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.prose-rag a:hover {
+  color: var(--secondary);
+}
+
+.prose-rag code {
+  font-family: "SF Mono", Menlo, Monaco, Consolas, monospace;
+  font-size: 0.85em;
+  background: var(--surface);
+  padding: 0.15em 0.35em;
+  border-radius: 4px;
+}
+
+.prose-rag pre {
+  background: var(--surface);
+  padding: 1em;
+  border-radius: 6px;
+  overflow-x: auto;
+  margin-bottom: 0.75em;
+}
+.prose-rag pre code {
+  background: transparent;
+  padding: 0;
+  font-size: 0.82em;
+  line-height: 1.6;
+}
+
+.prose-rag blockquote {
+  border-left: 2px solid var(--border);
+  padding-left: 1em;
+  color: var(--secondary);
+  margin-bottom: 0.75em;
+}
+
+.prose-rag hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 1em 0;
+}
+
+.prose-rag table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 0.75em;
+  font-size: 0.9em;
+}
+.prose-rag th,
+.prose-rag td {
+  border: 1px solid var(--border);
+  padding: 0.5em 0.75em;
+  text-align: left;
+}
+.prose-rag th {
+  background: var(--surface);
+  font-weight: 600;
+}
+
+/* Streaming cursor */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* ── Mobile viewport height fix ────────────────────────── */
+/* dvh accounts for browser chrome on iOS Safari / Android */
+@supports (height: 100dvh) {
+  html, body {
+    height: 100dvh;
+  }
+}
+
+/* Touch optimisations */
+* {
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+textarea {
+  touch-action: pan-y;
+}
